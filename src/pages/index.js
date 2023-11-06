@@ -2,9 +2,9 @@ import Head from 'next/head';
 import { useState } from 'react';
 
 export default function Home() {
-  const [firstNumber, setFirstNumber] = useState(0);
-  const [secondNumber, setSecondNumber] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [firstNumber, setFirstNumber] = useState('');
+  const [secondNumber, setSecondNumber] = useState('');
+  const [total, setTotal] = useState('');
 
   const firstNumAsNumber = Number(firstNumber);
   const secondNumbAsNumber = Number(secondNumber);
@@ -26,9 +26,9 @@ export default function Home() {
       default:
         setTotal(-1);
     }
-    console.log(total);
     console.log(event);
   };
+  
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function Home() {
             </div>
             <div className='input-group'>
               <span className='input-group-text'>Answer:</span>
-              <input className='form-control text-end' type='number' value={total.toFixed(2)} readOnly />
+              <input className='form-control text-end' type='number' value={total} readOnly />
             </div>
           </div>
         </div>
